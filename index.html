@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>www.foki.tg</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">MS</div>
+      <div>
+        <h1>MSfoki.tg</h1>
+        <p class="subtitle">MSfoki • Technologie & Sécurité</p>
+      </div>
+    </div>
+
+    <div class="searchWrap">
+      <input id="searchInput" type="search" placeholder="Rechercher un article (ex: Tenda F3, EW85, V380...)"/>
+      <button id="clearSearch" class="ghostBtn">Effacer</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice">
+      <span>📦 Livraison disponible</span>
+      <span>💳 Mobile Money sur <b>+228 91070704</b></span>
+      <span>📞 Commande via WhatsApp ou formulaire ci-dessous</span>
+    </div>
+
+    <section id="catalog" class="catalog"></section>
+  </main>
+
+  <!-- Modal Commander -->
+  <div id="orderModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <h2>Commander</h2>
+        <button class="closeBtn" id="closeModal" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="modalBody">
+        <p class="muted">Produit :</p>
+        <div class="productLine">
+          <div class="thumb"><img id="modalImg" alt="Image article"></div>
+          <div>
+            <div id="modalName" class="productName"></div>
+            <div id="modalPrice" class="productPrice"></div>
+          </div>
+        </div>
+
+        <form id="orderForm" class="orderForm">
+          <label>
+            Ton nom (optionnel)
+            <input id="customerName" type="text" placeholder="Ex: Abdoulaye / Aïcha" />
+          </label>
+
+          <label>
+            Numéro Mobile Money / Mobile (requis)
+            <input id="customerMobile" type="tel" placeholder="Ex: 90xxxxxxxx" required />
+          </label>
+
+          <label>
+            Adresse de livraison (requis)
+            <input id="customerAddress" type="text" placeholder="Ville/Quartier + repère" required />
+          </label>
+
+          <label>
+            Mode de paiement
+            <select id="paymentMethod">
+              <option value="Mobile Money">Mobile Money</option>
+              <option value="Appel / Confirmation WhatsApp">Appel / Confirmation WhatsApp</option>
+            </select>
+          </label>
+
+          <label class="checkboxRow">
+            <input id="needDelivery" type="checkbox" checked />
+            <span>Je veux la livraison</span>
+          </label>
+
+          <div class="btnRow">
+            <button type="button" id="sendWhatsApp" class="primaryBtn">Commander via WhatsApp</button>
+            <button type="button" id="copyNumber" class="ghostBtn">Copier le numéro : 91070704</button>
+          </div>
+
+          <p class="tiny muted">
+            En cliquant, on ouvre WhatsApp avec un message prêt. Tu confirmes ensuite la transaction Mobile Money sur <b>+228 91070704</b>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <b>MSSarl la chine au Togo</b> • Tous droits réservés
+    </div>
+    <div class="muted">Contact WhatsApp / Mobile Money : <b>+228 91070704</b></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
